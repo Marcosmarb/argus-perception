@@ -1,0 +1,30 @@
+# colcon build artifacts (if the workspace root is ever placed here)
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Datasets and videos (download them, never commit them)
+data/*
+!data/README.md
+*.mp4
+*.avi
+
+# Model weights
+*.pt
+*.onnx
+*.engine
+
+# Measurement outputs
+results/raw/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store

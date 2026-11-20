@@ -1,8 +1,8 @@
 from pathlib import Path
 
 import cv2
-import rclpy
 from cv_bridge import CvBridge
+import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 
@@ -20,10 +20,7 @@ class VideoPublisher(Node):
         fps = self.get_parameter('fps').value
         self.loop = self.get_parameter('loop').value
         self.frame_id = self.get_parameter('frame_id').value
-
-        self.frames = []
         self.frames = sorted(Path(sequence_path).glob('*.jpg'))
-        
         if not self.frames:
             self.get_logger().error(f'No .jpg frames found in "{sequence_path}"')
             raise SystemExit(1)
@@ -39,7 +36,7 @@ class VideoPublisher(Node):
         if self.index >= len(self.frames):
             if self.loop:
                 self.index = 0
-            else: 
+            else:
                 return
 
         image = cv2.imread(str(self.frames[self.index]))

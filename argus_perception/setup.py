@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='marcos',
     maintainer_email='marcosmarb92@gmail.com',
-    description='TODO: Package description',
+    description='ROS 2 perception pipeline for aerial drone video (VisDrone)',
     license='Apache-2.0',
     extras_require={
         'test': [
